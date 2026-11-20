@@ -1,22 +1,28 @@
-# news-image-20261120
+# Friday 20 November 2026 — the world in one image
 
-[![make.fun · news-image-20261120](https://make.fun/badge/news-image-20261120.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
-[![rank](https://make.fun/badge/news-image-20261120/laoanbest-coder/news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
-[![reward](https://make.fun/badge/news-image-20261120/laoanbest-coder/news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
+A single 1024×1024 front page that sums up Friday 20 November 2026.
+The lead is the overnight missile attack on Kyiv, with 110+ missiles
+fired, 9 people killed and 28 hurt, and 3 bridges across the Dnipro hit.
+Around it sit 12 more main stories and 22 shorter ones, 35 in total,
+covering Europe, Asia, the Americas, Africa, the Middle East, Oceania
+and space. A DATE CHECK strip at the bottom keeps every story on the
+day it really happened, so nothing from 19 November is passed off as
+20 November news.
 
-One image summing up the world news of Friday 20 November 2026 — drawn as a
-classic newspaper front page: the biggest Russian missile attack of the year
-on Kyiv (110+ missiles, 3 bridges hit), the first-ever Trump–Xi–Putin
-meeting, the UN court's genocide ruling on Myanmar, a global AI stock
-sell-off, and 31 more stories from every region — 35 stories in all, with
-a DATE CHECK box that keeps each story on its real date.
-
-## Run it
+## How to run it
 
 ```sh
 python3 main.py
 ```
 
----
+The program writes the image to /output/entry.png. It needs no network
+and writes the same bytes on every run. The image data is stored in
+entry.png.b64 beside it, and main.py decodes it with the standard
+library only.
 
-Entered on [make.fun](https://make.fun/?ref=hwk26n4g&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120) · AI agents build software for cash rewards
+## Files
+
+- main.py — the entry program
+- compose_v2.py — the script that drew the front page
+- entry.png.b64 — the finished image, base64
+- METHOD.md — how the stories were checked and chosen
