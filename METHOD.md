@@ -14,6 +14,29 @@ top-52 playoff. Limits: max 10 submissions/day, max 20 total per account.
 5. Dense but clear: lots of information, still readable; mind small details.
 6. Text must be instantly legible to a vision model: big, high contrast.
 
+## v5 — generated editorial illustrations (v4 provisional 97.4723%,
+12 games 10 won, 1 drawn, 1 lost; paid top-50 cutoff then ~98.87%)
+- Generator: `compose_v5.py`. Same layout, text, numbers and dates
+  as v4 — only the 13 card illustrations change. The code-drawn flat
+  shapes are replaced by generated editorial illustrations stored as
+  single-line base64 JPEGs in `art/` (kyiv, cyclone, chart, tank,
+  summit, gavel, rings, globe, tower, jet, candles, bridge, tag),
+  each centre-cropped to its card area (leads 315x108, features
+  185x52) and pasted in by the compose script. No fact, number or
+  date changed; the map block, ALSO list, DATE CHECK box, stats and
+  footer are identical in content to v4.
+- The illustrations were generated with no text in them, so there is
+  no garbled AI lettering anywhere on the page; every word and number
+  is still drawn in code. All 13 read as their subjects at full size
+  and at the 300 px test (missile trails, cyclone spiral, falling
+  chart, tank, flags, gavel, rings, globe + thermometer, tower, jet,
+  candlesticks, broken bridge, % tag).
+- `main.py` is unchanged from v4: it is stdlib-only, so it cannot
+  re-compose from the art assets — it decodes `entry.png.b64`, the
+  finished page, exactly as in v2–v4. `compose_v5.py` is the script
+  that decodes the art assets and builds the page deterministically.
+- Image: 1024x1024 PNG, 420,416 bytes. 300 px preview test passed.
+
 ## v4 — beige-paper redesign after a fresh top-3 study (v3 provisional
 97.2784%, 12 games 11 won, 1 drawn, 0 lost; paid top-50 cutoff then
 ~98.87%)
@@ -122,9 +145,11 @@ top-52 playoff. Limits: max 10 submissions/day, max 20 total per account.
   See the v1 report for details.
 
 ## How to iterate (v4, …)
-1. Edit the content data at the top of `compose_v4.py` (STATS, LEADS,
+1. Edit the content data at the top of `compose_v5.py` (STATS, LEADS,
    FEATURES, ALSO, DATE_LEFT/DATE_RIGHT) — or restyle colours/fonts/
-   layout in the same file.
+   layout in the same file. To swap an illustration, replace its
+   `art/<key>.b64` with a new single-line base64 JPEG of the same
+   pixel size (leads 315x108, features 185x52).
 2. Re-run: `python3 compose_v4.py entry.png` and visually check it
    (the script warns on any headline/deck wrapping past its line cap,
    any ALSO item wider than its column, any DATE CHECK past 3 lines).
@@ -149,4 +174,5 @@ top-52 playoff. Limits: max 10 submissions/day, max 20 total per account.
 | v1 | 1b1d2263a5287e19a87f2697d5b16d921b56d01b | terminal front page, 1024x1024, ~100 KB | not submitted (superseded by v2) |
 | v2 | 5e7b84fc2b21ff7941e82bcc4fe4696a74b80e8f | newspaper front page, 1024x1024, ~235 KB, 35 stories | provisional 97.5354% (10W 2D 0L of 12); top-50 cutoff then 98.8722% |
 | v3 | (see report) | newspaper front page, 1024x1024, ~238 KB, 34 stories, real map, Gaza tile | provisional 97.2784% (11W 1D 0L of 12); top-50 cutoff then ~98.87% |
-| v4 | (see report) | beige-paper front page, 1024x1024, ~195 KB, 35 stories, 3 illustrated leads, real map block, boxed DATE CHECK | pending |
+| v4 | (see report) | beige-paper front page, 1024x1024, ~195 KB, 35 stories, 3 illustrated leads, real map block, boxed DATE CHECK | provisional 97.4723% (10W 1D 1L of 12); top-50 cutoff then ~98.87% |
+| v5 | (see report) | same page, 1024x1024, 420,416 bytes, 13 generated editorial illustrations, 35 stories | pending |
