@@ -4,13 +4,18 @@
 
 # Friday 20 November 2026 — the world in one image
 
-One 1024×1024 front page for Friday 20 November 2026. The lead is
-the overnight attack on Kyiv: 110+ missiles fired, 9 killed, 28 hurt,
-3 bridges across the Dnipro hit. Thirteen main stories and 21 shorter
-ones add up to 34, spanning Europe, Asia, the Americas, Africa, the
-Middle East, Oceania and space — with a world map, region counts and
-a DATE CHECK strip that keeps every story on the day it really
-happened, so 19 November news is never passed off as 20 November news.
+One 1024×1024 front page for Friday 20 November 2026, drawn entirely
+in code. The date is the masthead. Three illustrated lead cards cover
+the overnight attack on Kyiv (110+ missiles, 9 killed, 28 hurt, 3
+bridges hit), Cyclone Akvan's landfall in Odisha and the AI sell-off
+sweeping Asian markets; ten more illustrated stories and 22 shorter
+ones bring the total to 35, across Europe, Asia, the Americas, Africa,
+the Middle East, Oceania and space. A navy world-map panel pins all
+13 main stories by number, region counts sit underneath, and a
+red-bordered DATE CHECK box separates what happened on 20 November
+from what was first reported on 19 November or is still due on
+21 November — so no story is ever passed off as happening on the
+wrong day.
 
 ## How to run it
 
@@ -26,6 +31,6 @@ library only.
 ## Files
 
 - main.py — the entry program
-- compose_v3.py — the script that drew the front page
+- compose_v4.py — the script that drew the front page
 - entry.png.b64 — the finished image, base64, one line
 - METHOD.md — how the stories were checked and chosen

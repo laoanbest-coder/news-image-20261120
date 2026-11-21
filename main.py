@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""News-image entry v3 (Python 3.13, standard library only).
+"""News-image entry v4 (Python 3.13, standard library only).
 
 Writes the entry image to /output/entry.png (or $MAKEFUN_OUTPUT_DIR
 when set, for local testing). The image bytes live in entry.png.b64
